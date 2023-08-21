@@ -1,0 +1,95 @@
+import React, { Component } from 'react';
+import { Modal } from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css';
+import '../css/popup.css';
+import Diplome from './diplome';
+
+
+class Popup extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            openModal: false,
+            centre_p: "",
+            Ecole: "",
+            centre: "",
+            Num_place: "",
+            Date_nais: "",
+            np_pere: "",
+            np_mere: "",
+            session: "",
+            date_deliv: "",
+
+        };
+    }
+
+    onClickButton = e => {
+        e.preventDefault()
+        this.setState({ openModal: true })
+    }
+
+    render() {
+        return (
+            <div>
+
+                <Modal open={this.state.openModal} onClose={this.onCloseModal}>
+                    {/* Here you can add anything you want to reveal when the button is clicked! */}
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div className="card-box">
+                            <span className="details">Centre d'animation pédagogique de</span>
+                            {/*Lier l'input au data cenntre_p */}<input type="text" onChange={() => this.state.centre_p} placeholder="Centre d'animation pédagogique de" />
+                        </div>
+                        <div className="card-box">
+                            <span className="details">Ecole</span>
+                            <input type="text" placeholder="Ecole" value={this.state.centre_p}
+                            onChange={e => this.setState({centre_p: e.target.value})}/>
+                        </div>
+                        <div className="card-box">
+                            <span className="details">Centre</span>
+                            <input type="text" placeholder="Centre" />
+                        </div>
+                        <div className="card-box">
+                            <span className="details">N° place</span>
+                            <input type="text" placeholder="Numéro de place" />
+                        </div>
+                        <div className="card-box">
+                            <span className="details">Date et lieu de naissance</span>
+                            <input type="text" placeholder="Date et lieu de naissance" />
+                        </div>
+                        <div className="card-box">
+                            <span className="details">Nom et prenom du père</span>
+                            <input type="text" placeholder="Entrer le nom complet du père" />
+                        </div>
+                        <div className="card-box">
+                            <span className="details">Nom et prenom de la mère</span>
+                            <input type="text" placeholder="Entrer le nom complet de la mère" />
+                        </div>
+                        <div className="card-box">
+                            <span className="details">Session</span>
+                            <input type="text" placeholder="Session de" />
+                        </div>
+                        <div className="card-box">
+                            <span className="details">Date de délivrance</span>
+                            <input type="text" placeholder="Date de délivrance" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+
+                </Modal>
+
+                <div>
+                    <Diplome centre= {this.state.centre_p}/>
+                </div>
+            </div>
+
+        );
+    }
+}
+
+export default Popup;

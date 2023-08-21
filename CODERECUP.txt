@@ -1,0 +1,188 @@
+ <div className="card m-3">
+            <div className="card-body">
+                <h4>MINSTER DE L'EDUCATION</h4> <h4 id="right">REPUBLIQUE DU MALI</h4><br />
+                <h4>DE L'ALPHABETISATION ET</h4> <h4 id="right">UN PEUPLE - UN BUT - UNE FOI</h4><br />
+                <h4>DES LANGUES NATIONALES<br /></h4>
+                <h4 id="pad">******************<br /></h4>
+                <br />
+                <h4>CENTRE NATIONALE DES EXAMINS<br /></h4>
+                <h4>ET CONCOURS DE L'EDUCATION<br /></h4>
+                <h4>ACADEMIE D'ENSEIGNEMENT DE BAMAKO RIVE GAUCHE<br /></h4>
+                <h4>CENTRE D'ANIMATION PEDAGOGIQUE DE BANCONI<br /></h4>
+            </div>
+            <div className="card M-3">
+                <div className="card-body">
+                    <h2 id="h2">ATTESTATION DU DIPLÔME D'ETUDES FONDAMENTALES</h2><br />
+                    <h2 id="h2">~D. E. F. ~</h2><br />
+                    <h3 id="txt" >N°1598</h3>
+                    <h3></h3>
+                </div>
+            </div>
+            <p>
+                Le directeur du centre d'Académie Pédagogique De:  <strong></strong><br />
+                Soussougné, atteste que: <br />
+                M. / MLE:  <br />
+                Ecole:  <br />
+                Centre: <br />
+                N° place: <br />
+                Date et lieu de naissance: <br />
+                Fils / Fille de  <br />
+                et de <br />
+                A été déclaré (e) définitivement admins (e) à l'examen du Dipôme d'Etudes Fondamentales de la session de  <br />
+                En foi de quoi la présente attestation qui tient lieu de dipôme lui est délivré pour servir et valoir ce que droit.<br />
+            </p>
+            <h4 id="txt">Bamako, le </h4><br />
+            <h4 id="txt">Le Directeur du CAP</h4><br />
+            <br />
+            <br />
+            <h4>Il n'est délivré qu'une seule</h4><br />
+            <br />
+            <h4 className="margin-left:30px">Attestation</h4> <h4 id="txt">Le Directeur du CAP</h4><br />
+        </div>
+
+
+
+        .cadre_centrer
+{
+position:absolute;
+width: 200px; /*Très important: la largeur, 200px par exemple*/
+height: 100px; /*Très important : la hauteur, 100px par exemple*/
+top: 50%;
+left: 50%;
+margin-left: -100px; /*Très important : - la moitié de la largeur*/
+margin-top: -50px; /*Très important : - la moitié de la hauteur*/
+}
+
+
+/* #card{
+    border: 3px solid black;
+    width: 800px;
+} */
+
+#right {
+    float: right;
+    text-align: right;
+    padding-left: 10px;
+}
+
+#pad {
+    margin-left: 35PX;
+}
+
+#h2 {
+    text-align: center;
+}
+#txt {
+    text-align: right;
+    margin-right: 25PX;
+}
+
+.input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+ 
+ 
+ 
+ <Modal open={show}>
+                <ModalHeader>
+                <ModalTitle>
+                        Enregidtrement diplome
+                    </ModalTitle>
+                </ModalHeader>
+                <ModalBody>
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" className="col-form-label">Recipient:</label>
+                            <input type="text" className="form-control" id="recipient-name" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" className="col-form-label">Message:</label>
+                            <textarea className="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </ModalBody>
+                <ModalFooter>
+                    <Button>Close</Button>
+                    <Button>Enregister</Button>
+                </ModalFooter>
+            </Modal>
+
+             className="brand-image img-circle elevation-3"
+                        style={{ opacity: ".8", marginTop: "5px" }}
+
+
+
+
+<>
+            <br />
+
+            <div className='border border-primary border-5 bg-white ' >
+                <div className="row">
+                    <div className="col-sm-2">
+                        <img id='image' src="/images/esgic.png" alt="AdminLTE Logo" />
+                    </div>
+                    <div className="col-sm-5">
+                        <h5 style={{ color: "blue" }}>Ecole Superieur de Gestion, d'Informatique et de Comptabilité <br /></h5>
+                        <h6 style={{ textAlign: "center" }}>Agrément N°03-1248 / MEN-SG</h6>
+                        <h6 style={{ textAlign: "center" }}>BPE 895 - Tel:(223) 20 23 01 71 / 66 72 17 58</h6>
+                        <h6 style={{ textAlign: "center" }}>Site : <a style={{ textAlign: "center" }} href='wwww.esgicbmako.com'>wwww.esgicbmako.com</a></h6>
+                        <h6 style={{ textAlign: "center" }}>Email : <a style={{ textAlign: "center" }} href='comptacamara@afribone.net.ml'>comptacamara@afribone.net.ml</a></h6>
+                    </div>
+                    <div className="col-sm-5">
+                        <h5 >REPUBLIQUE DU MALI<br />Un Peuple - Un But - Une Foi</h5>
+                        <h5 >Ministère de l'Enseignement Supérieur et <br /> de la Recherche Scientifique </h5>
+                        <br />
+                        <div className="row pr-5">
+                            <div className="col-sm-6">
+                                {/* azerty */}
+                            </div>
+                            <div className="col-sm-6">
+                                <h6 style={{ textAlign: "center", background: 'gray', padding: 4 }}>N° {id}A/CP-ESGIC</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 style={{ textAlign: "center", color: "red" }}>ATTESTATION DU DIPLOME</h1>
+                {/* <hr id='hr'></hr>  */}
+                <br />
+                <h6 style={{ textAlign: "center" }}>Nous soussignés, Ecome Superieur de Gestion, d'Informatique et Comptabilité(ESGIC), attestons que <strong>Mr/Mlle/Mme</strong> </h6>
+                <h2 style={{ textAlign: "center" }}><strong>{nom} né(e) le {date_nais}</strong></h2>
+                <h4 style={{ textAlign: "center" }}><strong>à {lieu} - <u>N°Mle :</u> {matricule}/UT</strong></h4>
+                <h6 style={{ textAlign: "center" }}>à été déclaré(e) définitivement admis(e) à l'examin de fin de cycle du <br /> {dp} de l'ESGIC. </h6>
+                <div className="row">
+                    <div className="col-sm-5">
+                        <h6 style={{ paddingLeft: 20 + "px" }}><strong><u>Session de </u>: {session} - Centre de l'ESGIC</strong></h6>
+                    </div>
+                    <div className="col-sm-7">
+                        <h6><strong><u>Filière </u>: {filiere}</strong></h6>
+                    </div>
+                </div>
+                <h4 style={{ textAlign: "center", color: "red" }}><strong><u>Mention </u>: {mention}</strong></h4>
+                <h6 style={{ textAlign: "center" }}>En foi de quoi la présente attestation lui est délivré pour servir et valoir ce que de droit.</h6>
+                <h6 style={{ textAlign: "right", paddingRight: 20 + "px" }}>Bamako, le <strong>{date_deliv}</strong></h6>
+                <div className="row">
+                    <div className="col-sm-6">
+                        <h6 style={{ paddingLeft: 20 + "px" }}><strong>Le Directeur des Etudes</strong></h6>
+                        <br />
+                        <br />
+                        <h6 style={{ paddingLeft: 20 + "px" }}><strong>Aguibou OUATTARA</strong></h6>
+                        <br/>
+                    </div>
+                    <div className="col-sm-6">
+                        <h6 style={{ textAlign: "right", paddingRight: 20 + "px" }}><strong>Le Directeur Général</strong></h6>
+                        <br />
+                        <br />
+                        <h6 style={{ textAlign: "right", paddingRight: 20 + "px" }}><strong>Diakaridia CAMARA</strong></h6>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </>

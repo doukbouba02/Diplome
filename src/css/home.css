@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 0px;
+}
+
+body {
+    justify-content: center;
+    height: 100px;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+}
+
+.mycard {
+    height: 200PX;
+    width: 350PX;
+    border: none;
+    margin: 5px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+
+.intro{
+    height: 100PX;
+    width: 150;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+h1{
+    margin: 10px;
+    font-size: 40px;
+}
+
+p{
+    margin: 20;
+    font-size: 20px;
+}
+
+span{
+    font-weight: bold;
+}
+
+.card:hover{
+    cursor: pointer;
+}
