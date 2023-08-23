@@ -1,13 +1,15 @@
 import axios from "axios";
 
+const URL = process.env.URL
+
 export const getDiplomes = async () => {
-    const response = await axios.get("http://127.0.0.1/diplomes");
+    const response = await axios.get(URL + "diplomes");
     return response.data;
 };
 
 export const saveDiplome = async (diplome) => {
     try {
-        const response = await axios.post("http://127.0.0.1/diplome", {
+        const response = await axios.post(URL + "diplome", {
             nom: diplome.nom,
             date_nais: diplome.date_nais,
             lieu: diplome.lieu,
@@ -29,7 +31,7 @@ export const saveDiplome = async (diplome) => {
 export const updateDiplome = async (diplome) => {
     try {
         const response = await axios.patch(
-            `http://127.0.0.1/diplome/${diplome.id}`,
+            URL + `diplome/${diplome.id}`,
             {
                 nom: diplome.nom,
                 date_nais: diplome.date_nais,
@@ -52,7 +54,7 @@ export const updateDiplome = async (diplome) => {
 
 export const deleteDiplome = async (id) => {
     try {
-        const response = await axios.delete(`http://127.0.0.1/diplome/${id}`);
+        const response = await axios.delete(URL + `diplome/${id}`);
         console.log('**************\nthis is te reponse: ' + response)
         return response.data;
     } catch (error) {

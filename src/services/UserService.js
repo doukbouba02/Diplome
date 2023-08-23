@@ -1,13 +1,15 @@
 import axios from "axios";
 
+const URL = process.env.URL
+
 export const getUsers = async () => {
-  const response = await axios.get("http://127.0.0.1/users");
+  const response = await axios.get(URL + "users");
   return response.data;
 };
 
 export const saveUser = async (user) => {
   try {
-    const response = await axios.post("http://127.0.0.1/user", {
+    const response = await axios.post(URL + "user", {
       nom: user.nom,
       prenom: user.prenom,
       login: user.login,
@@ -24,7 +26,7 @@ export const saveUser = async (user) => {
 export const updateUser = async (user) => {
   try {
     const response = await axios.patch(
-      `http://127.0.0.1/user/${user.id}`,
+      URL + `user/${user.id}`,
       {
         nom: user.nom,
         prenom: user.prenom,
@@ -42,7 +44,7 @@ export const updateUser = async (user) => {
 
 export const deleteUser = async (id) => {
   try {
-    const response = await axios.delete(`http://127.0.0.1/user/${id}`);
+    const response = await axios.delete(URL + `user/${id}`);
     console.log('**************\nthis is te reponse: ' + response)
     return response.data;
   } catch (error) {
@@ -54,7 +56,7 @@ export const deleteUser = async (id) => {
 export const getUserByLoginAndPassword = async (login, passWord) => {
   try {
     const response = await axios.post(
-      `http://127.0.0.1/userByLoginAndPass/`,
+      URL + `userByLoginAndPass/`,
       {
         login: login,
         password: passWord,
