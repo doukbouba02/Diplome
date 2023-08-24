@@ -9,6 +9,7 @@ import CloseButton from 'react-bootstrap/esm/CloseButton';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { addDiplome, deleteDiplome, updateDiplome } from '../reducer/reducer-diplome';
 
+const URL = process.env.URL
 
 function Home2() {
     //Variables declarations
@@ -22,7 +23,7 @@ function Home2() {
     }, []);
 
     const getDiplomes = async () => {
-        const response = await axios.get('http://127.0.0.1/diplomes');
+        const response = await axios.get( URL + 'diplomes');
         setDiplome(response.data);
         setTableRows(response.data);
     };

@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import '../css/formulaire.css';
+
+const URL = process.env.URL;
+
 export default class AddDiplome extends Component {
     constructor(props) {
         super(props);
@@ -54,7 +57,7 @@ export default class AddDiplome extends Component {
     saveDiplome = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://127.0.0.1/diplomes', {
+            await axios.post( URL + 'diplomes', {
                 nom: this.state.nom,
                 date_nais: this.state.date_nais,
                 lieu: this.state.lieu,

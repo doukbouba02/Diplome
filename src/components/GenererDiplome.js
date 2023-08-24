@@ -10,6 +10,8 @@ import "bulma/css/bulma.css";
 import QRCode from "qrcode.react";
 import html2pdf from 'html2pdf.js';
 
+const URL = process.env.URL
+
 function GenererDiplome() {
 
     const [nom, setNom] = useState("");
@@ -64,7 +66,7 @@ function GenererDiplome() {
     }
 
     const getDiplomeById = async () => {
-        const response = await axios.get(`http://127.0.0.1/diplome/${id}`);
+        const response = await axios.get( URL + `diplome/${id}`);
         setNom(response.data.nom);
         setDate_nais(response.data.date_nais);
         setLieu(response.data.lieu);
