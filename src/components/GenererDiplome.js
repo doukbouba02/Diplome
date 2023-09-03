@@ -10,7 +10,7 @@ import "bulma/css/bulma.css";
 import QRCode from "qrcode.react";
 import html2pdf from 'html2pdf.js';
 
-const URL = process.env.URL
+const URL = process.env.REACT_APP_URL;
 
 function GenererDiplome() {
 

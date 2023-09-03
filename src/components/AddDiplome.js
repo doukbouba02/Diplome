@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import '../css/formulaire.css';
 
-const URL = process.env.URL;
+const URL = process.env.REACT_APP_URL;
 
 export default class AddDiplome extends Component {
     constructor(props) {

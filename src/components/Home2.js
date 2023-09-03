@@ -9,7 +9,7 @@ import CloseButton from 'react-bootstrap/esm/CloseButton';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { addDiplome, deleteDiplome, updateDiplome } from '../reducer/reducer-diplome';
 
-const URL = process.env.URL
+const URL = process.env.REACT_APP_URL;
 
 function Home2() {
     //Variables declarations
@@ -75,7 +75,7 @@ function Home2() {
                             <option value="Licence">Licence</option>
                             <option value="Master">Master</option>
                         </select>
-                        {console.log("diplome selected: ", dp)}
+                        {/* {console.log("diplome selected: ", dp)} */}
                     </div>
                     <div className="col-md-3">
                         <Button

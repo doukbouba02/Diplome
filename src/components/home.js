@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Routes, Link, BrowserRouter } from "react-router-dom";
+import { Route, Routes, Link, BrowserRouter, Navigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import UserList from './UserList';
 import AddDiplome from './AddDiplome';
@@ -7,7 +7,6 @@ import Diplome from "./diplome";
 import GenererDiplome from "./GenererDiplome";
 import Formulaire from "./formulaire";
 import UserProfile from '../userProfile/UserProfile';
-// import Popup from './popup';
 import Home2 from "./Home2";
 
 
@@ -16,34 +15,61 @@ export default class Home extends Component {
         super(props);
         this.state = {
             active: "Accueil",
-            isAdmin: false,
+            Admin: false,
+            show: false,
+            delayComplete: false, // Flag to track if the delay has completed
+            count: 0,
         };
     }
+
+    
     onLogOut = () => {
-        this.props.onLogOut();
+        this.setState({ active: "Accueil" });
+        //console.log("Active state: " + this.state.active);
+        //this.props.onLogOut();
+       
     };
     handleActive = (event) => {
-        // console.log(event.target.text);
         this.setState({
             active: event.target.text.trim(),
         });
     };
     componentDidMount() {
-        console.log('infos user: ' + UserProfile.getName() + UserProfile.getProfile());
-        this.setState({ isAdmin: UserProfile.getProfile() === "Administrateur" });
-        console.log('Admin status: ' + this.state.isAdmin);
+        console.log('infos user: ' + UserProfile.getName() +"\n"+ UserProfile.getProfile());
+        console.log("Active: " + this.state.active);
+        
+        
+
+        // Adding a delay of 3 seconds before completing the delay
+        setTimeout(() => {
+            this.setState({
+                delayComplete: true,
+            });
+            if (UserProfile.getProfile().trim() === "Administrateur") {
+                this.setState({
+                    Admin: true,
+                });
+                console.log('Admin status: ' + this.state.Admin);
+                console.log("Yes admin");
+            }
+            else {
+                console.log("User not Administrator");
+            }
+        }, 3000);
     }
 
-    // componentDidMount() {
-    //     // console.log(UserProfile.getName() + UserProfile.getProfile());
-    //     // this.setState({ isAdmin: UserProfile.getProfile() === "Administrateur" });
-    //     this.getDiplomes();
-    // };
-
+    
     render() {
+        if (!this.state.delayComplete) {
+            return (<> 
+                <div style={loadingScreenStyle}>
+                    <img src='/images/Loading1.gif' alt="Loading" />
+                </div>
+            </>)
+        }
+
         return (
             <>
-                <BrowserRouter>
                     <div className="hold-transition layout-top-nav">
                         <div className="wrapper">
                             <nav className="main-header navbar navbar-expand-md navbar-light navbar-white">
@@ -90,7 +116,7 @@ export default class Home extends Component {
                                                     <i className="bi bi-file-text"></i> Diplome
                                                 </Link>
                                             </li>
-                                            {this.state.isAdmin ? (
+                                            {this.state.Admin ? (
                                                 <li className="nav-item">
                                                     <Link
                                                         className={
@@ -147,9 +173,20 @@ export default class Home extends Component {
                             </footer>
                         </div>
                     </div>
-                </BrowserRouter>
-
             </>
         );
     }
 }
+
+const loadingScreenStyle = {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%', 
+    height: '100%',
+    backgroundColor: '#EEEEEE',
+    display: 'flex',
+    justifyContent: 'center', /* Horizontally center content */
+    alignItems: 'center', /* Vertically center content */
+    zIndex: '9999', /* Ensure it's on top of everything */
+};
